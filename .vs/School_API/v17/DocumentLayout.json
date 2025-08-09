@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Web API Projects\\School_API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\services\\base\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\services\\base\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "School_API\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "School_API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T15:03:57.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Program.cs",
+              "RelativeDocumentMoniker": "School_API\\Program.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Program.cs",
+              "RelativeToolTip": "School_API\\Program.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T14:57:17.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "School_API\\Services\\TokenService.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Services\\TokenService.cs",
+              "RelativeToolTip": "School_API\\Services\\TokenService.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAgwDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T14:39:38.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ITokenService.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Services\\Base\\ITokenService.cs",
+              "RelativeDocumentMoniker": "School_API\\Services\\Base\\ITokenService.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Services\\Base\\ITokenService.cs",
+              "RelativeToolTip": "School_API\\Services\\Base\\ITokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T14:38:33.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Models\\User.cs",
+              "RelativeDocumentMoniker": "School_API\\Models\\User.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Models\\User.cs",
+              "RelativeToolTip": "School_API\\Models\\User.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T14:30:57.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

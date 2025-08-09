@@ -9,7 +9,7 @@ namespace School_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController(JwtOptions jwtOptions) : ControllerBase
+    public class AuthController: ControllerBase
     {
 
 

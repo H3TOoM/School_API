@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using School_API;
 using School_API.Data;
+using School_API.Services;
+using School_API.Services.Base;
 using System.Text;
 using UnitOfWork.Repoistory;
 using UnitOfWork.Repoistory.Base;
@@ -19,6 +21,8 @@ builder.Services.AddControllers();
 
 builder.Services.AddScoped(typeof(IRepoistory<>), typeof(MainRepoistory<>));
 builder.Services.AddScoped<IUnitOfWork, AppUnitOfWork>();
+builder.Services.AddScoped<ITokenService, TokenService>();
+
 
 
 
