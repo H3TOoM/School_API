@@ -1,5 +1,9 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using School_API;
 using School_API.Data;
+using System.Text;
 using UnitOfWork.Repoistory;
 using UnitOfWork.Repoistory.Base;
 
@@ -22,8 +26,30 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
+var JwtOptions = builder.Configuration.GetSection("Jwt").Get<JwtOptions>();
+
+builder.Services.AddSingleton(JwtOptions);
 
 
+builder.Services.AddAuthentication()
+    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+    {
+
+        options.SaveToken = true;
+
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidIssuer = JwtOptions.Issuer,
+
+            ValidateAudience = true,
+            ValidAudience = JwtOptions.Audience,
+
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtOptions.SigningKey))
+        };
+
+    });
 
 
 
