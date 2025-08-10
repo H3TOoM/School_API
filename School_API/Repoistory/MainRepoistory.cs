@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using UnitOfWork.Data;
-using UnitOfWork.Repoistory.Base;
+using School_API.Data;
+using School_API.Data;
+using School_API.Models;
+using School_API.Repoistory.Base;
 
 namespace UnitOfWork.Repoistory
 {
-    public class MainRepoistory<T> : IRepoistory<T> where T : class
+    public class IMainRepoistory<T> : IRepoistory<T> where T : class
     {
 
         
@@ -12,7 +14,7 @@ namespace UnitOfWork.Repoistory
         private readonly AppDbContext _context;
         private readonly DbSet<T> _dbSet;
 
-        public MainRepoistory(AppDbContext context)
+        public IMainRepoistory(AppDbContext context)
         {
             _context = context;
             _dbSet = _context.Set<T>();
@@ -54,7 +56,7 @@ namespace UnitOfWork.Repoistory
             }
         }
 
-
+       
 
     }
 }

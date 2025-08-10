@@ -1,13 +1,15 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using School_API;
 using School_API.Data;
+using School_API.Models;
+using School_API.Repoistory.Base;
 using School_API.Services;
 using School_API.Services.Base;
 using System.Text;
 using UnitOfWork.Repoistory;
-using UnitOfWork.Repoistory.Base;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,8 +21,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 
-builder.Services.AddScoped(typeof(IRepoistory<>), typeof(MainRepoistory<>));
+builder.Services.AddIdentity<User, Role>()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
+
+
+
+builder.Services.AddScoped(typeof(IRepoistory<>), typeof(IMainRepoistory<>));
 builder.Services.AddScoped<IUnitOfWork, AppUnitOfWork>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 
 

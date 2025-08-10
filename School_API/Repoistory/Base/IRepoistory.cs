@@ -1,4 +1,6 @@
-﻿namespace UnitOfWork.Repoistory.Base
+﻿using School_API.Models;
+
+namespace School_API.Repoistory.Base
 {
     public interface IRepoistory<T> where T : class
     {
@@ -11,6 +13,8 @@
         Task UpdateAsync(T entity);
 
         Task DeleteByIdAsync(int id);
-        
+
+
+
     }
 }

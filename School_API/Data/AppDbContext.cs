@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using School_API.Models;
 
 namespace School_API.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<User, Role, int>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -39,13 +40,21 @@ namespace School_API.Data
                         .HasOne<Teacher>()
                         .WithMany()
                         .HasForeignKey("TeachersId")
-                        .OnDelete(DeleteBehavior.Restrict), 
+                        .OnDelete(DeleteBehavior.Restrict),
                     j => j
                         .HasOne<Course>()
                         .WithMany()
                         .HasForeignKey("CoursesId")
-                        .OnDelete(DeleteBehavior.Restrict)  
+                        .OnDelete(DeleteBehavior.Restrict)
                 );
+
+
+              modelBuilder.Entity<User>()
+                  .HasOne(u => u.Role)
+                  .WithMany()
+                  .HasForeignKey(u => u.RoleId)
+                  .OnDelete(DeleteBehavior.Restrict); 
+
         }
 
 

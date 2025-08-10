@@ -1,10 +1,11 @@
-﻿using UnitOfWork.Models;
+﻿using System;
+using System.Threading.Tasks;
 
-namespace UnitOfWork.Repoistory.Base
+namespace School_API.Repoistory.Base
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepoistory<Customer> Customers { get; }
+        IRepoistory<TEntity> Repository<TEntity>() where TEntity : class;
 
         Task<int> SaveChangesAsync();
     }

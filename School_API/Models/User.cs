@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace School_API.Models
 {
-    public class User : IdentityUser
+    public class User : IdentityUser<int>
 
     {
         [Key]
@@ -16,10 +16,12 @@ namespace School_API.Models
         public string Email { get; set; }
 
         [Required]
-        public byte[] PasswordHash { get; set; }
+        public string PasswordHash { get; set; }
 
         [Required]
         public int RoleId { get; set; }
         public Role Role { get; set; }
+
+       
     }
 }

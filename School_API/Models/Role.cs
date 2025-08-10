@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace School_API.Models
 {
-    public class Role
+    public class Role : IdentityRole<int>
     {
         [Key]
         public int Id { get; set; }
