@@ -11,13 +11,11 @@ namespace School_API.Services
     public class AuthService : IAuthService
     {
 
-        private readonly AppDbContext _context;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IRepoistory<User> _repoistory;
 
-        public AuthService(AppDbContext context, IUnitOfWork unitOfWork, IRepoistory<User> repoistory)
+        public AuthService(IUnitOfWork unitOfWork, IRepoistory<User> repoistory)
         {
-            _context = context;
             _unitOfWork = unitOfWork;
             _repoistory = repoistory;
         }

@@ -10,7 +10,7 @@ namespace School_API.Repoistory.Base
 
         Task Add(T entity);
 
-        Task UpdateAsync(T entity);
+        Task UpdateAsync(int id , T entity);
 
         Task DeleteByIdAsync(int id);
 

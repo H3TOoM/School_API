@@ -22,7 +22,7 @@ namespace School_API.Services
                 new Claim("Id", user.Id.ToString()), // Custom claim: User ID
                 new Claim(ClaimTypes.Name, user.Name), // User's full name
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()), // Unique token ID
-                new Claim(JwtRegisteredClaimNames.Email, user.Email) // User's email
+                new Claim(JwtRegisteredClaimNames.Email, user.Email), // User's email
             };
 
             // Add all user roles as claims

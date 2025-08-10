@@ -3,16 +3,64 @@
   "WorkspaceRootPath": "D:\\Web API Projects\\School_API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\controllers\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\controllers\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\services\\base\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\services\\base\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\services\\managerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\services\\managerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810051618_fixRole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:School_API\\Migrations\\20250810051618_fixRole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\services\\base\\imanagerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\services\\base\\imanagerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\repoistory\\mainrepoistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\repoistory\\mainrepoistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\dtos\\managerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\dtos\\managerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810113837_aa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:School_API\\Migrations\\20250810113837_aa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\models\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\models\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\services\\base\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\services\\base\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\repoistory\\base\\irepoistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\repoistory\\base\\irepoistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,26 +87,6 @@
       "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\data\\appdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\services\\base\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\services\\base\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\repoistory\\base\\irepoistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\repoistory\\base\\irepoistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\repoistory\\mainrepoistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\repoistory\\mainrepoistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\repoistory\\base\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\repoistory\\base\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -71,12 +99,8 @@
       "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\services\\base\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\services\\base\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|d:\\web api projects\\school_api\\school_api\\migrations\\20250810051618_fixrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD1A34DA-34A2-4A59-98AA-AB5B48E805B9}|School_API\\School_API.csproj|solutionrelative:school_api\\migrations\\20250810051618_fixrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -89,86 +113,53 @@
           "SelectedChildIndex": 8,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Role.cs",
-              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Models\\Role.cs",
-              "RelativeDocumentMoniker": "School_API\\Models\\Role.cs",
-              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Models\\Role.cs",
-              "RelativeToolTip": "School_API\\Models\\Role.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T05:04:09.81Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "20250810050104_ChangePassDataType.cs",
-              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810050104_ChangePassDataType.cs",
-              "RelativeDocumentMoniker": "School_API\\Migrations\\20250810050104_ChangePassDataType.cs",
-              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810050104_ChangePassDataType.cs",
-              "RelativeToolTip": "School_API\\Migrations\\20250810050104_ChangePassDataType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T05:01:05.39Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AppDbContextFactory.cs",
-              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Data\\AppDbContextFactory.cs",
-              "RelativeDocumentMoniker": "School_API\\Data\\AppDbContextFactory.cs",
-              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Data\\AppDbContextFactory.cs",
-              "RelativeToolTip": "School_API\\Data\\AppDbContextFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T04:59:29.354Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "AuthService.cs",
               "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "School_API\\Services\\AuthService.cs",
               "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Services\\AuthService.cs",
               "RelativeToolTip": "School_API\\Services\\AuthService.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAFIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAQwEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-10T03:40:32.659Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Program.cs",
+              "RelativeDocumentMoniker": "School_API\\Program.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Program.cs",
+              "RelativeToolTip": "School_API\\Program.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAQwEYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T14:57:17.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20250810113837_aa.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810113837_aa.cs",
+              "RelativeDocumentMoniker": "School_API\\Migrations\\20250810113837_aa.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810113837_aa.cs",
+              "RelativeToolTip": "School_API\\Migrations\\20250810113837_aa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T11:38:37.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "School_API\\Controllers\\AuthController.cs",
               "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Controllers\\AuthController.cs",
               "RelativeToolTip": "School_API\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAA3wCIAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAQwEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-09T15:03:57.133Z",
               "EditorCaption": ""
@@ -176,162 +167,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Program.cs",
-              "RelativeDocumentMoniker": "School_API\\Program.cs",
-              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Program.cs",
-              "RelativeToolTip": "School_API\\Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAwBkAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T14:57:17.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "School_API\\Data\\AppDbContext.cs",
-              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "School_API\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAuwDgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T05:06:02.747Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "20250810051618_fixRole.cs",
-              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810051618_fixRole.cs",
-              "RelativeDocumentMoniker": "School_API\\Migrations\\20250810051618_fixRole.cs",
-              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810051618_fixRole.cs",
-              "RelativeToolTip": "School_API\\Migrations\\20250810051618_fixRole.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAgwDQAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T05:16:19.412Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20250810051203_Cc.cs",
-              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810051203_Cc.cs",
-              "RelativeDocumentMoniker": "School_API\\Migrations\\20250810051203_Cc.cs",
-              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810051203_Cc.cs",
-              "RelativeToolTip": "School_API\\Migrations\\20250810051203_Cc.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T05:12:04.253Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "TokenService.cs",
               "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "School_API\\Services\\TokenService.cs",
               "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Services\\TokenService.cs",
               "RelativeToolTip": "School_API\\Services\\TokenService.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAgwDcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwCYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-09T14:39:38.643Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ITokenService.cs",
-              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Services\\Base\\ITokenService.cs",
-              "RelativeDocumentMoniker": "School_API\\Services\\Base\\ITokenService.cs",
-              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Services\\Base\\ITokenService.cs",
-              "RelativeToolTip": "School_API\\Services\\Base\\ITokenService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T14:38:33.787Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Models\\User.cs",
-              "RelativeDocumentMoniker": "School_API\\Models\\User.cs",
-              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Models\\User.cs",
-              "RelativeToolTip": "School_API\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T14:30:57.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IRepoistory.cs",
-              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\Base\\IRepoistory.cs",
-              "RelativeDocumentMoniker": "School_API\\Repoistory\\Base\\IRepoistory.cs",
-              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\Base\\IRepoistory.cs",
-              "RelativeToolTip": "School_API\\Repoistory\\Base\\IRepoistory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T04:17:13.681Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "MainRepoistory.cs",
-              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\MainRepoistory.cs",
-              "RelativeDocumentMoniker": "School_API\\Repoistory\\MainRepoistory.cs",
-              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\MainRepoistory.cs",
-              "RelativeToolTip": "School_API\\Repoistory\\MainRepoistory.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAIAwwDoAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T04:12:14.491Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\Base\\IUnitOfWork.cs",
-              "RelativeDocumentMoniker": "School_API\\Repoistory\\Base\\IUnitOfWork.cs",
-              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\Base\\IUnitOfWork.cs",
-              "RelativeToolTip": "School_API\\Repoistory\\Base\\IUnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T04:15:45.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "School_API\\Repoistory\\UnitOfWork.cs",
-              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\UnitOfWork.cs",
-              "RelativeToolTip": "School_API\\Repoistory\\UnitOfWork.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwCIAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T04:13:42.292Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "RegisterDto.cs",
-              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\DTOs\\RegisterDto.cs",
-              "RelativeDocumentMoniker": "School_API\\DTOs\\RegisterDto.cs",
-              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\DTOs\\RegisterDto.cs",
-              "RelativeToolTip": "School_API\\DTOs\\RegisterDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-10T03:31:45.67Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 6,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\DTOs\\LoginDto.cs",
               "RelativeDocumentMoniker": "School_API\\DTOs\\LoginDto.cs",
@@ -344,7 +192,98 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 5,
+              "Title": "ManagerService.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Services\\ManagerService.cs",
+              "RelativeDocumentMoniker": "School_API\\Services\\ManagerService.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Services\\ManagerService.cs",
+              "RelativeToolTip": "School_API\\Services\\ManagerService.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAAEQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T10:59:52.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ITokenService.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Services\\Base\\ITokenService.cs",
+              "RelativeDocumentMoniker": "School_API\\Services\\Base\\ITokenService.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Services\\Base\\ITokenService.cs",
+              "RelativeToolTip": "School_API\\Services\\Base\\ITokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T14:38:33.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ManagerController.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Controllers\\ManagerController.cs",
+              "RelativeDocumentMoniker": "School_API\\Controllers\\ManagerController.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Controllers\\ManagerController.cs",
+              "RelativeToolTip": "School_API\\Controllers\\ManagerController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAkwBoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T11:18:32.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ManagerDto.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\DTOs\\ManagerDto.cs",
+              "RelativeDocumentMoniker": "School_API\\DTOs\\ManagerDto.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\DTOs\\ManagerDto.cs",
+              "RelativeToolTip": "School_API\\DTOs\\ManagerDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T11:48:51.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MainRepoistory.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\MainRepoistory.cs",
+              "RelativeDocumentMoniker": "School_API\\Repoistory\\MainRepoistory.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\MainRepoistory.cs",
+              "RelativeToolTip": "School_API\\Repoistory\\MainRepoistory.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwCUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T04:12:14.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IManagerService.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Services\\Base\\IManagerService.cs",
+              "RelativeDocumentMoniker": "School_API\\Services\\Base\\IManagerService.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Services\\Base\\IManagerService.cs",
+              "RelativeToolTip": "School_API\\Services\\Base\\IManagerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T10:46:08.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Manager.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Models\\Manager.cs",
+              "RelativeDocumentMoniker": "School_API\\Models\\Manager.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Models\\Manager.cs",
+              "RelativeToolTip": "School_API\\Models\\Manager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T10:46:50.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Services\\Base\\IAuthService.cs",
               "RelativeDocumentMoniker": "School_API\\Services\\Base\\IAuthService.cs",
@@ -354,6 +293,139 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-10T03:29:44.165Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AppDbContextFactory.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Data\\AppDbContextFactory.cs",
+              "RelativeDocumentMoniker": "School_API\\Data\\AppDbContextFactory.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Data\\AppDbContextFactory.cs",
+              "RelativeToolTip": "School_API\\Data\\AppDbContextFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T04:59:29.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IRepoistory.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\Base\\IRepoistory.cs",
+              "RelativeDocumentMoniker": "School_API\\Repoistory\\Base\\IRepoistory.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\Base\\IRepoistory.cs",
+              "RelativeToolTip": "School_API\\Repoistory\\Base\\IRepoistory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T04:17:13.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20250810050104_ChangePassDataType.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810050104_ChangePassDataType.cs",
+              "RelativeDocumentMoniker": "School_API\\Migrations\\20250810050104_ChangePassDataType.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810050104_ChangePassDataType.cs",
+              "RelativeToolTip": "School_API\\Migrations\\20250810050104_ChangePassDataType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T05:01:05.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Role.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Models\\Role.cs",
+              "RelativeDocumentMoniker": "School_API\\Models\\Role.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Models\\Role.cs",
+              "RelativeToolTip": "School_API\\Models\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T05:04:09.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "School_API\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "School_API\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAuwDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T05:06:02.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "20250810051618_fixRole.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810051618_fixRole.cs",
+              "RelativeDocumentMoniker": "School_API\\Migrations\\20250810051618_fixRole.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810051618_fixRole.cs",
+              "RelativeToolTip": "School_API\\Migrations\\20250810051618_fixRole.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAgwDQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T05:16:19.412Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20250810051203_Cc.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810051203_Cc.cs",
+              "RelativeDocumentMoniker": "School_API\\Migrations\\20250810051203_Cc.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Migrations\\20250810051203_Cc.cs",
+              "RelativeToolTip": "School_API\\Migrations\\20250810051203_Cc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T05:12:04.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Models\\User.cs",
+              "RelativeDocumentMoniker": "School_API\\Models\\User.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Models\\User.cs",
+              "RelativeToolTip": "School_API\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T14:30:57.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\Base\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "School_API\\Repoistory\\Base\\IUnitOfWork.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\Base\\IUnitOfWork.cs",
+              "RelativeToolTip": "School_API\\Repoistory\\Base\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T04:15:45.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "School_API\\Repoistory\\UnitOfWork.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\Repoistory\\UnitOfWork.cs",
+              "RelativeToolTip": "School_API\\Repoistory\\UnitOfWork.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwCIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T04:13:42.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "D:\\Web API Projects\\School_API\\School_API\\DTOs\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "School_API\\DTOs\\RegisterDto.cs",
+              "ToolTip": "D:\\Web API Projects\\School_API\\School_API\\DTOs\\RegisterDto.cs",
+              "RelativeToolTip": "School_API\\DTOs\\RegisterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T03:31:45.67Z"
             }
           ]
         }

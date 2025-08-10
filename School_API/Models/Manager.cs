@@ -13,7 +13,7 @@ namespace School_API.Models
         [Required, EmailAddress, StringLength(150)]
         public string Email { get; set; }
 
-        public ICollection<Teacher> Teachers { get; set; } = new List<Teacher>();
-        public ICollection<Staff> StaffMembers { get; set; } = new List<Staff>();
+        public ICollection<Teacher>? Teachers { get; set; } = new List<Teacher>();
+        public ICollection<Staff>? StaffMembers { get; set; } = new List<Staff>();
     }
 }
