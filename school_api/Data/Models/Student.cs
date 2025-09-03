@@ -29,6 +29,7 @@ namespace school_api.Data.Models
         public User User { get; set; }
 
 
+        public int ParentId { get; set; }
         public Parent? Parent { get; set; }
 
         [Required]
