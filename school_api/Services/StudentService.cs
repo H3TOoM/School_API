@@ -15,11 +15,26 @@ namespace school_api.Services
 
         // Inject AutoMapper
         private readonly IMapper _mapper;
-        public StudentService( IMainRepoistory<Student> mainRepoistory, IUnitOfWork unitOfWork,IMapper mapper )
+        public StudentService( IMainRepoistory<Student> mainRepoistory, IUnitOfWork unitOfWork, IMapper mapper )
         {
             _mainRepoistory = mainRepoistory;
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+        }
+
+
+
+
+        public async Task<IEnumerable<StudentReadDto>> GetAllStudentsAsync()
+        {
+            var students = await _mainRepoistory.GetAllAsync();
+            return _mapper.Map<IEnumerable<StudentReadDto>>( students );
+        }
+
+        public async Task<StudentReadDto> GetStudentByIdAsync( int id )
+        {
+            var student = await _mainRepoistory.GetByIdAsync( id );
+            return _mapper.Map<StudentReadDto>( student );
         }
 
         public async Task<StudentReadDto> CreateStudentAsync( StudentCreateDto dto )
@@ -42,32 +57,11 @@ namespace school_api.Services
 
         }
 
-        public async Task<bool> DeleteStudentAsync( int id )
+        public async Task<StudentReadDto> UpdateStudentAsync( int id, StudentUpdateDto dto )
         {
             var student = await _mainRepoistory.GetByIdAsync( id );
-            await _mainRepoistory.DeleteAsync(id);
-            await _unitOfWork.SaveChangesAsync();
 
-            return true;
-        }
-
-        public async Task<IEnumerable<StudentReadDto>> GetAllStudentsAsync()
-        {
-            var students = await _mainRepoistory.GetAllAsync();
-            return _mapper.Map<IEnumerable<StudentReadDto>>( students );
-        }
-
-        public async Task<StudentReadDto> GetStudentByIdAsync( int id )
-        {
-            var student = await _mainRepoistory.GetByIdAsync( id );
-            return _mapper.Map<StudentReadDto>( student );
-        }
-
-        public async Task<StudentReadDto> UpdateStudentAsync(int id , StudentUpdateDto dto )
-        {
-           var student = await _mainRepoistory.GetByIdAsync ( id );
-
-            if( student == null )
+            if (student == null)
                 throw new KeyNotFoundException( "Student not found." );
 
             student.Name = dto.Name ?? student.Name;
@@ -85,6 +79,16 @@ namespace school_api.Services
 
         }
 
-       
+
+
+        public async Task<bool> DeleteStudentAsync( int id )
+        {
+            var student = await _mainRepoistory.GetByIdAsync( id );
+            await _mainRepoistory.DeleteAsync( id );
+            await _unitOfWork.SaveChangesAsync();
+
+            return true;
+        }
+
     }
 }

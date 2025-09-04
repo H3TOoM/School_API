@@ -23,6 +23,9 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // add services
 builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<IParentService, ParentService>();
+builder.Services.AddScoped<ITeacherService, TeacherService>();
+builder.Services.AddScoped<IDepartmentService, DepartmentService>();    
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
