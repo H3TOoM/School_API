@@ -58,13 +58,17 @@ namespace school_api.Services
 
         public async Task<DepartmentReadDto> UpdateDepartmentAsync( int id, DepartmentUpdateDto dto )
         {
+
             var department = await _mainRepoistory.GetByIdAsync( id );
             if (department == null)
                 throw new KeyNotFoundException( "Department Not Found!" );
 
-
+            // Always allow updating Name
             department.Name = dto.Name ?? department.Name;
-            department.ManagerId = dto.ManagerId ?? department.ManagerId;
+
+            // Only update ManagerId if not zero
+            if (department.ManagerId != 0)
+                department.ManagerId = dto.ManagerId ?? department.ManagerId;
 
             await _mainRepoistory.UpdateAsync( id, department );
             await _unitOfWork.SaveChangesAsync();
