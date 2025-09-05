@@ -16,7 +16,7 @@ namespace school_api.DTOs
         public bool IsPresent { get; set; }
         public int StudentId { get; set; }
         public int ScheduleId { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
     }
 
     public class AttendanceUpdateDto

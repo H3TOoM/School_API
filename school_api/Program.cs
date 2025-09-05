@@ -27,6 +27,7 @@ builder.Services.AddScoped<IParentService, ParentService>();
 builder.Services.AddScoped<ITeacherService, TeacherService>();
 builder.Services.AddScoped<IDepartmentService, DepartmentService>(); 
 builder.Services.AddScoped<IManagerService, ManagerService>();
+builder.Services.AddScoped<IAttendanceService , AttendanceService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
