@@ -43,7 +43,7 @@ namespace school_api.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAttendance( AttendanceCreateDto dto )
         {
-            if (dto == null || dto.Equals( null ))
+            if (dto.Equals( null ))
                 return BadRequest();
 
             var attendance = await _attendanceService.CreateAttendance( dto );
@@ -55,7 +55,7 @@ namespace school_api.Controllers
         [HttpPut( "{id}" )]
         public async Task<IActionResult> UpdateAttendance( int id, [FromBody] AttendanceUpdateDto dto )
         {
-            if (dto == null || dto.Equals( null ))
+            if (dto.Equals( null ))
                 return BadRequest();
 
             var updatedAttendance = await _attendanceService.UpdateAttendanceAsync( id, dto );
@@ -67,6 +67,7 @@ namespace school_api.Controllers
         {
             if (id == 0)
                 return BadRequest();
+
             var result = await _attendanceService.DeleteAttendanceAsync( id );
 
             if (!result)
