@@ -8,11 +8,8 @@ namespace school_api.Services
 {
     public class DepartmentService : IDepartmentService
     {
-        // Inject Repoistory & UOF
         private readonly IMainRepoistory<Department> _mainRepoistory;
         private readonly IUnitOfWork _unitOfWork;
-
-        // Inject AutoMapper
         private readonly IMapper _mapper;
         public DepartmentService( IMainRepoistory<Department> mainRepoistory, IUnitOfWork unitOfWork, IMapper mapper )
         {

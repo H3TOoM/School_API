@@ -43,6 +43,10 @@ namespace school_api.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateStudent(StudentCreateDto dto )
         {
+
+            if(dto.Equals(null))
+                return BadRequest();
+
             var student = await _studentService.CreateStudentAsync(dto);
             if(student == null)
                 return NotFound();
