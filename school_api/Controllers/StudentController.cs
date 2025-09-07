@@ -58,6 +58,9 @@ namespace school_api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateStudent(int id , [FromBody] StudentUpdateDto dto )
         {
+            if (id == 0)
+                return BadRequest();
+
             var student = await _studentService.UpdateStudentAsync(id, dto);
             return Ok( student );
         }

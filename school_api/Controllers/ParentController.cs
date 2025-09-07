@@ -29,39 +29,48 @@ namespace school_api.Controllers
             return Ok( parents );
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetParentById(int id )
+        [HttpGet( "{id}" )]
+        public async Task<IActionResult> GetParentById( int id )
         {
-            var parent  = await _parentService.GetParentByIdAsync( id );
-            if (parent == null) return NotFound();
+            var parent = await _parentService.GetParentByIdAsync( id );
+            if (parent == null)
+                return NotFound();
             return Ok( parent );
         }
 
 
         // Create Parent 
         [HttpPost]
-        public async Task<IActionResult> CreateParent(ParentCreateDto dto )
+        public async Task<IActionResult> CreateParent( ParentCreateDto dto )
         {
-            if(dto == null) return NotFound();
-            var parent = await _parentService.CreateParentAsync(dto);
+            if (dto.Equals( null ))
+                return BadRequest();
+
+            var parent = await _parentService.CreateParentAsync( dto );
             return CreatedAtAction( nameof( GetParentById ), new { id = parent.Id }, parent );
         }
 
         // Update Parent 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateParent(int id , [FromBody] ParentUpdateDto dto )
+        [HttpPut( "{id}" )]
+        public async Task<IActionResult> UpdateParent( int id, [FromBody] ParentUpdateDto dto )
         {
+            if (id == 0)
+                return BadRequest();
+
             var updatedParent = await _parentService.UpdateParentAsync( id, dto );
             return Ok( updatedParent );
         }
 
 
         // Delete Parent 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteParent(int id )
+        [HttpDelete( "{id}" )]
+        public async Task<IActionResult> DeleteParent( int id )
         {
+            if (id == 0)
+                return BadRequest();
+
             var result = await _parentService.DeleteParentAsync( id );
-            if(!result)
+            if (!result)
                 return NotFound();
 
             return NoContent();

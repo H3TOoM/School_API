@@ -55,11 +55,11 @@ namespace school_api.Controllers
         [HttpPut( "{id}" )]
         public async Task<IActionResult> UpdateAttendance( int id, [FromBody] AttendanceUpdateDto dto )
         {
-            if (dto.Equals( null ))
+            if (id == 0)
                 return BadRequest();
-
             var updatedAttendance = await _attendanceService.UpdateAttendanceAsync( id, dto );
             return Ok( updatedAttendance );
+
         }
 
         [HttpDelete( "{id}" )]

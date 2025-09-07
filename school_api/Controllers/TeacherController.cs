@@ -40,6 +40,9 @@ namespace school_api.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateTeacher(TeacherCreateDto dto )
         {
+            if(dto.Equals(null)) 
+                return BadRequest();
+
             var teacher = await _teacherService.CreateTeacherAsync(dto);
             return CreatedAtAction( nameof( GetTeacherById ), new { id = teacher.Id }, teacher );
         }
@@ -48,6 +51,9 @@ namespace school_api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTeacher(int id, TeacherUpdateDto dto )
         {
+            if (id == 0)
+                return BadRequest();
+
             var teacher = await _teacherService.UpdateTeacherAsync(id,dto);
             return Ok(teacher);
         }
@@ -56,6 +62,9 @@ namespace school_api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTeacher(int id)
         {
+            if (id == 0)
+                return BadRequest();
+
             var result = await _teacherService.DeleteTeacherAsync( id );
             if(!result)
                 return NotFound();

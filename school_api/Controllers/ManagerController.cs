@@ -30,6 +30,9 @@ namespace school_api.Controllers
         [HttpGet( "{id}" )]
         public async Task<IActionResult> GetManagerById( int id )
         {
+            if (id == 0)
+                return BadRequest();
+
             var manager = await _managerService.GetManagerByIdAsync( id );
             if (manager == null)
                 return NotFound();
@@ -53,8 +56,8 @@ namespace school_api.Controllers
         [HttpPut( "{id}" )]
         public async Task<IActionResult> UpdateManager( int id, ManagerUpdateDto dto )
         {
-            if (dto.Equals( null ))
-                return NotFound();
+            if (id == 0)
+                return BadRequest();
 
             var updatedManager = await _managerService.UpdateManagerAsync( id, dto );
 

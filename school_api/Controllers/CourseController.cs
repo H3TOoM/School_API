@@ -53,7 +53,7 @@ namespace school_api.Controllers
         [HttpPut( "{id}" )]
         public async Task<IActionResult> UpdateCourse( int id, CourseUpdateDto dto )
         {
-            if (dto.Equals( null ) || id == 0)
+            if (id == 0)
                 return BadRequest();
 
             var updatedCourse = await _courseService.UpdateCourseAsync( id, dto );

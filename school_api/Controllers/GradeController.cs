@@ -52,7 +52,7 @@ namespace school_api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateGrade(int id,GradeUpdateDto dto )
         {
-            if (dto.Equals( null ))
+            if (id == 0)
                 return BadRequest();
 
             var updateGrade = await _gradeService.UpdateGradeAsync(id , dto );

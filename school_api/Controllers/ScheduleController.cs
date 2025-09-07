@@ -32,6 +32,9 @@ namespace school_api.Controllers
         [HttpGet( "{id}" )]
         public async Task<IActionResult> GetScheduleById( int id )
         {
+            if (id == 0)
+                return BadRequest();
+
             var schedule = await _scheduleService.GetSchedulesByIdAsync( id );
             if (schedule == null)
                 return NotFound();
@@ -54,7 +57,7 @@ namespace school_api.Controllers
         [HttpPut( "{id}" )]
         public async Task<IActionResult> UpdateSchedule( int id, [FromBody] ScheduleUpdateDto dto )
         {
-            if (dto.Equals( null ))
+            if (id == 0)
                 return BadRequest();
 
             var updatedSchedule = await _scheduleService.UpdateScheduleAsync( id, dto );

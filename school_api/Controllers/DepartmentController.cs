@@ -43,6 +43,9 @@ namespace school_api.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateDepaetment( DepartmentCreateDto dto )
         {
+            if(dto.Equals(null))
+                return BadRequest();
+
             var department = await _departmentService.CreateDepartmentAsync( dto );
             return CreatedAtAction( nameof( GetDepartmentById ), new { id = department.Id }, department );
         }
@@ -51,6 +54,9 @@ namespace school_api.Controllers
         [HttpPut( "{id}" )]
         public async Task<IActionResult> UpdateDepartment( int id, [FromBody] DepartmentUpdateDto dto )
         {
+            if (id == 0)
+                return BadRequest();
+
             var updatedDepartment = await _departmentService.UpdateDepartmentAsync( id, dto );
             return Ok( updatedDepartment );
         }
@@ -59,6 +65,9 @@ namespace school_api.Controllers
         [HttpDelete( "{id}" )]
         public async Task<IActionResult> DeleteDepartment( int id )
         {
+            if (id == 0)
+                return BadRequest();
+
             var result = await _departmentService.DeleteDepartmentAsync( id );
             if (!result)
                 return NotFound();

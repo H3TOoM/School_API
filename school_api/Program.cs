@@ -31,6 +31,7 @@ builder.Services.AddScoped<IAttendanceService , AttendanceService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 builder.Services.AddScoped<IGradeService, GradeService>();
 builder.Services.AddScoped<IScheduleService ,  ScheduleService>();
+builder.Services.AddScoped<IStaffService , StaffService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
