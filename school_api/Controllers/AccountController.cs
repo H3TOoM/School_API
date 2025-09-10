@@ -1,0 +1,56 @@
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using school_api.DTOs;
+using school_api.Services.Base;
+
+namespace school_api.Controllers
+{
+    [Route( "api/[controller]" )]
+    [ApiController]
+    public class AccountController : ControllerBase
+    {
+        private readonly IAccountService _accountService;
+        private readonly ITokenService _tokenService;
+        public AccountController( IAccountService accountService, ITokenService tokenService )
+        {
+            _accountService = accountService;
+            _tokenService = tokenService;
+        }
+
+
+        [HttpPost( "Register" )]
+        public async Task<IActionResult> Register( UserCreateDto dto )
+        {
+            if (dto.Equals( null ))
+                return BadRequest( "Invalid Data!" );
+
+
+            var user = await _accountService.RegisterAsync( dto );
+            var token = await _tokenService.GenerateTokenAsync( user );
+
+            return Ok( new { Token = token, User = user } );
+        }
+
+        [HttpPost( "Login" )]
+        public async Task<IActionResult> Login( LoginUserDto loginUser )
+        {
+            var user = await _accountService.LoginAsync( loginUser );
+            if (user == null)
+                return NotFound( "User No Found!" );
+
+            var token = await _tokenService.GenerateTokenAsync( user );
+            return Ok( new { Token = token, User = user } );
+
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAccount(int id)
+        {
+            var result = await _accountService.DeleteUserAsync( id );
+            if (!result)
+                return NotFound();
+
+            return NoContent();
+        }
+    }
+}

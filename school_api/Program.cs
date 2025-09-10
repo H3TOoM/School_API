@@ -19,6 +19,7 @@ builder.Services.AddDbContext<AppDbContext>( options =>
 // Register UnitOfWork and Repositories
 builder.Services.AddScoped( typeof( IMainRepoistory<> ), typeof( MainRepoistory<> ) );
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IAccountRepoistory, AccountRepoistory>();
 
 
 // add services
@@ -35,6 +36,8 @@ builder.Services.AddScoped<IStaffService , StaffService>();
 builder.Services.AddScoped<IStudentClassService , StudentClassService>();
 builder.Services.AddScoped<ISubjectService, SubjectService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
