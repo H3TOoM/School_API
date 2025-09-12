@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using school_api.Data.Models;
 using school_api.DTOs;
 using school_api.Services.Base;
@@ -8,6 +9,7 @@ namespace school_api.Controllers
 {
     [Route( "api/[controller]" )]
     [ApiController]
+    [Authorize]
     public class ParentController : ControllerBase
     {
         // Inject Service
@@ -41,6 +43,7 @@ namespace school_api.Controllers
 
         // Create Parent 
         [HttpPost]
+        [Authorize(Roles = "Admin,Manager")]
         public async Task<IActionResult> CreateParent( ParentCreateDto dto )
         {
             if (dto.Equals( null ))
@@ -52,6 +55,7 @@ namespace school_api.Controllers
 
         // Update Parent 
         [HttpPut( "{id}" )]
+        [Authorize(Roles = "Admin,Manager")]
         public async Task<IActionResult> UpdateParent( int id, [FromBody] ParentUpdateDto dto )
         {
             if (id == 0)
@@ -64,6 +68,7 @@ namespace school_api.Controllers
 
         // Delete Parent 
         [HttpDelete( "{id}" )]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteParent( int id )
         {
             if (id == 0)

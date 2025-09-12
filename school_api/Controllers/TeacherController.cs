@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using school_api.Data.Models;
 using school_api.DTOs;
 using school_api.Services.Base;
@@ -8,6 +9,7 @@ namespace school_api.Controllers
 {
     [Route( "api/[controller]" )]
     [ApiController]
+    [Authorize]
     public class TeacherController : ControllerBase
     {
         // inject service
@@ -38,10 +40,11 @@ namespace school_api.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,Manager")]
         public async Task<IActionResult> CreateTeacher(TeacherCreateDto dto )
         {
-            if(dto.Equals(null)) 
-                return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             var teacher = await _teacherService.CreateTeacherAsync(dto);
             return CreatedAtAction( nameof( GetTeacherById ), new { id = teacher.Id }, teacher );
@@ -49,6 +52,7 @@ namespace school_api.Controllers
 
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,Manager")]
         public async Task<IActionResult> UpdateTeacher(int id, TeacherUpdateDto dto )
         {
             if (id == 0)
@@ -60,6 +64,7 @@ namespace school_api.Controllers
 
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteTeacher(int id)
         {
             if (id == 0)

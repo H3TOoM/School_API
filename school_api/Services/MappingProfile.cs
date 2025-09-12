@@ -92,6 +92,11 @@ namespace school_api.Services
                 .ForMember( dest => dest.StudentClass, opt => opt.MapFrom( src => new IdNameDto { Id = src.StudentClass.Id, Name = src.StudentClass.Name } ) );
             CreateMap<ScheduleCreateDto, Schedule>();
             CreateMap<ScheduleUpdateDto, Schedule>();
+
+            // User Profile
+            CreateMap<User, UserProfileDto>();
+            CreateMap<FileUpload, FileResponseDto>();
+            CreateMap<AuditLog, AuditLogDto>();
         }
     }
 }

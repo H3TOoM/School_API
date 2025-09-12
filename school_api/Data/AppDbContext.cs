@@ -23,6 +23,9 @@ namespace school_api.Data
         public DbSet<Schedule> Schedules { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Grade> Grades { get; set; }
+        public DbSet<FileUpload> FileUploads { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
+        public DbSet<AuditLog> AuditLogs { get; set; }
 
         protected override void OnModelCreating( ModelBuilder modelBuilder )
         {
@@ -177,6 +180,27 @@ namespace school_api.Data
                 .HasOne( g => g.Course )
                 .WithMany()
                 .HasForeignKey( g => g.CourserId )
+                .OnDelete( DeleteBehavior.Restrict );
+
+            // FileUpload relations
+            modelBuilder.Entity<FileUpload>()
+                .HasOne( f => f.Uploader )
+                .WithMany()
+                .HasForeignKey( f => f.UploadedBy )
+                .OnDelete( DeleteBehavior.Restrict );
+
+            // RefreshToken relations
+            modelBuilder.Entity<RefreshToken>()
+                .HasOne( rt => rt.User )
+                .WithMany()
+                .HasForeignKey( rt => rt.UserId )
+                .OnDelete( DeleteBehavior.Cascade );
+
+            // AuditLog relations
+            modelBuilder.Entity<AuditLog>()
+                .HasOne( al => al.User )
+                .WithMany()
+                .HasForeignKey( al => al.UserId )
                 .OnDelete( DeleteBehavior.Restrict );
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using school_api.DTOs;
 using school_api.Services.Base;
 
@@ -7,6 +8,7 @@ namespace school_api.Controllers
 {
     [Route( "api/[controller]" )]
     [ApiController]
+    [Authorize]
     public class StudentController : ControllerBase
     {
         // Inject Servcie
@@ -41,11 +43,12 @@ namespace school_api.Controllers
 
         // Create Student
         [HttpPost]
+        [Authorize(Roles = "Admin,Manager")]
         public async Task<IActionResult> CreateStudent(StudentCreateDto dto )
         {
 
-            if(dto.Equals(null))
-                return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             var student = await _studentService.CreateStudentAsync(dto);
             if(student == null)
@@ -56,6 +59,7 @@ namespace school_api.Controllers
 
         // update student 
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,Manager")]
         public async Task<IActionResult> UpdateStudent(int id , [FromBody] StudentUpdateDto dto )
         {
             if (id == 0)
@@ -68,6 +72,7 @@ namespace school_api.Controllers
 
         // Delete student
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteStudent(int id )
         {
             var result = await _studentService.DeleteStudentAsync(id);

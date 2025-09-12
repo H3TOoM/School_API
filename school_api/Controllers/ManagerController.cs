@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using school_api.Data.Models;
 using school_api.DTOs;
 using school_api.Services.Base;
@@ -8,6 +9,7 @@ namespace school_api.Controllers
 {
     [Route( "api/[controller]" )]
     [ApiController]
+    [Authorize]
     public class ManagerController : ControllerBase
     {
         private readonly IManagerService _managerService;

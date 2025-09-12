@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using school_api.Data.Models;
 using school_api.DTOs;
 using school_api.Services.Base;
@@ -8,6 +9,7 @@ namespace school_api.Controllers
 {
     [Route( "api/[controller]" )]
     [ApiController]
+    [Authorize]
     public class CourseController : ControllerBase
     {
         private readonly ICourseService _courseService;
@@ -40,6 +42,7 @@ namespace school_api.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,Manager")]
         public async Task<IActionResult> CreateCourse( CourseCreateDto dto )
         {
             if (dto.Equals( null ))
@@ -51,6 +54,7 @@ namespace school_api.Controllers
         }
 
         [HttpPut( "{id}" )]
+        [Authorize(Roles = "Admin,Manager")]
         public async Task<IActionResult> UpdateCourse( int id, CourseUpdateDto dto )
         {
             if (id == 0)
@@ -62,6 +66,7 @@ namespace school_api.Controllers
 
 
         [HttpDelete( "{id}" )]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteCourse( int id )
         {
             if (id == 0)

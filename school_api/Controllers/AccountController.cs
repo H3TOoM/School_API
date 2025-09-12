@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using school_api.DTOs;
 using school_api.Services.Base;
 
@@ -19,10 +20,11 @@ namespace school_api.Controllers
 
 
         [HttpPost( "Register" )]
+        [AllowAnonymous]
         public async Task<IActionResult> Register( UserCreateDto dto )
         {
-            if (dto.Equals( null ))
-                return BadRequest( "Invalid Data!" );
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
 
             var user = await _accountService.RegisterAsync( dto );
@@ -32,8 +34,12 @@ namespace school_api.Controllers
         }
 
         [HttpPost( "Login" )]
+        [AllowAnonymous]
         public async Task<IActionResult> Login( LoginUserDto loginUser )
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+                
             var user = await _accountService.LoginAsync( loginUser );
             if (user == null)
                 return NotFound( "User No Found!" );
@@ -43,8 +49,9 @@ namespace school_api.Controllers
 
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAccount(int id)
+        [HttpDelete( "{id}" )]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteAccount( int id )
         {
             var result = await _accountService.DeleteUserAsync( id );
             if (!result)

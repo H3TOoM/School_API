@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using school_api.Data.Models;
 using school_api.DTOs;
 using school_api.Services.Base;
@@ -8,6 +9,7 @@ namespace school_api.Controllers
 {
     [Route( "api/[controller]" )]
     [ApiController]
+    [Authorize]
     public class AttendanceController : ControllerBase
     {
         private readonly IAttendanceService _attendanceService;
@@ -41,6 +43,7 @@ namespace school_api.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "Admin,Manager,Teacher")]
         public async Task<IActionResult> CreateAttendance( AttendanceCreateDto dto )
         {
             if (dto.Equals( null ))
@@ -53,6 +56,7 @@ namespace school_api.Controllers
 
 
         [HttpPut( "{id}" )]
+        [Authorize(Roles = "Admin,Manager,Teacher")]
         public async Task<IActionResult> UpdateAttendance( int id, [FromBody] AttendanceUpdateDto dto )
         {
             if (id == 0)
@@ -63,6 +67,7 @@ namespace school_api.Controllers
         }
 
         [HttpDelete( "{id}" )]
+        [Authorize(Roles = "Admin,Manager")]
         public async Task<IActionResult> DeleteAttendance( int id )
         {
             if (id == 0)

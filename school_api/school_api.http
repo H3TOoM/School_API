@@ -1,6 +1,147 @@
 @school_api_HostAddress = http://localhost:5269
+@token = your_jwt_token_here
 
-GET {{school_api_HostAddress}}/weatherforecast/
+### Health Check
+GET {{school_api_HostAddress}}/health
 Accept: application/json
+
+### Register User
+POST {{school_api_HostAddress}}/api/Account/Register
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "password": "Test123!",
+  "role": "Student"
+}
+
+### Login User
+POST {{school_api_HostAddress}}/api/Account/Login
+Content-Type: application/json
+
+{
+  "email": "admin@school.com",
+  "password": "Admin123!"
+}
+
+### Get All Students (Requires Authentication)
+GET {{school_api_HostAddress}}/api/Student
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Get All Teachers (Requires Authentication)
+GET {{school_api_HostAddress}}/api/Teacher
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Create Student (Requires Admin/Manager Role)
+POST {{school_api_HostAddress}}/api/Student
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "New Student",
+  "email": "newstudent@example.com",
+  "password": "Student123!",
+  "role": "Student",
+  "studentClassId": 1
+}
+
+### Get My Profile
+GET {{school_api_HostAddress}}/api/Profile/me
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Update My Profile
+PUT {{school_api_HostAddress}}/api/Profile/me
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Updated Name",
+  "email": "updated@example.com"
+}
+
+### Change Password
+POST {{school_api_HostAddress}}/api/PasswordReset/change-password
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "currentPassword": "Admin123!",
+  "newPassword": "NewPassword123!",
+  "confirmPassword": "NewPassword123!"
+}
+
+### Forgot Password
+POST {{school_api_HostAddress}}/api/PasswordReset/forgot-password
+Content-Type: application/json
+
+{
+  "email": "admin@school.com"
+}
+
+### Get Statistics (Admin/Manager only)
+GET {{school_api_HostAddress}}/api/Profile/stats
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Upload File
+POST {{school_api_HostAddress}}/api/FileUpload/upload
+Authorization: Bearer {{token}}
+Content-Type: multipart/form-data
+
+< ./test-file.txt
+
+### Get Files
+GET {{school_api_HostAddress}}/api/FileUpload
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Search Students
+POST {{school_api_HostAddress}}/api/Search/students
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "searchTerm": "test",
+  "page": 1,
+  "pageSize": 10,
+  "sortBy": "name",
+  "sortDescending": false
+}
+
+### Refresh Token
+POST {{school_api_HostAddress}}/api/Token/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "your_refresh_token_here"
+}
+
+### Send Email (Admin/Manager only)
+POST {{school_api_HostAddress}}/api/Email/send
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "to": "test@example.com",
+  "subject": "Test Email",
+  "body": "This is a test email",
+  "isHtml": true
+}
+
+### Get Audit Logs (Admin only)
+POST {{school_api_HostAddress}}/api/Audit/logs
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "page": 1,
+  "pageSize": 10,
+  "sortBy": "timestamp",
+  "sortDescending": true
+}
 
 ###

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using school_api.DTOs;
 using school_api.Services;
 using school_api.Services.Base;
@@ -8,6 +9,7 @@ namespace school_api.Controllers
 {
     [Route( "api/[controller]" )]
     [ApiController]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -40,6 +42,7 @@ namespace school_api.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateUser( UserCreateDto dto )
         {
 
@@ -53,6 +56,7 @@ namespace school_api.Controllers
 
 
         [HttpPut( "{id}" )]
+        [Authorize(Roles = "Admin,Manager")]
         public async Task<IActionResult> UpdateUser( int id, [FromBody] UserUpdateDto dto )
         {
             var updatedUser = await _userService.UpdateUserAsync( id, dto );
@@ -61,6 +65,7 @@ namespace school_api.Controllers
 
 
         [HttpDelete( "{id}" )]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteUser( int id )
         {
             if (id == 0)

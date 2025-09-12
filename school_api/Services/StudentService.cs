@@ -46,7 +46,7 @@ namespace school_api.Services
                 Email = dto.Email,
                 PhoneNumber = dto.PhoneNumber,
                 UserId = dto.UserId,
-                ParentId = dto.ParentId,
+                ParentId = (int)dto.ParentId,
                 StudentClassId = dto.StudentClassId,
             };
 
@@ -89,6 +89,9 @@ namespace school_api.Services
 
             return true;
         }
+
+
+
 
     }
 }

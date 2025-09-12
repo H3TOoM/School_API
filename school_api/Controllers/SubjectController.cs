@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using school_api.DTOs;
 using school_api.Services;
 using school_api.Services.Base;
@@ -8,6 +9,7 @@ namespace school_api.Controllers
 {
     [Route( "api/[controller]" )]
     [ApiController]
+    [Authorize]
     public class SubjectController : ControllerBase
     {
         private readonly ISubjectService _subjectService;
@@ -41,6 +43,7 @@ namespace school_api.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "Admin,Manager")]
         public async Task<IActionResult> CreateSubject( SubjectCreateDto dto )
         {
 
@@ -54,6 +57,7 @@ namespace school_api.Controllers
 
 
         [HttpPut( "{id}" )]
+        [Authorize(Roles = "Admin,Manager")]
         public async Task<IActionResult> UpdateSubject( int id, [FromBody] SubjectUpdateDto dto )
         {
             var updatedSubject = await _subjectService.UpdateSubjectAsync( id, dto );
@@ -62,6 +66,7 @@ namespace school_api.Controllers
 
 
         [HttpDelete( "{id}" )]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteSubject( int id )
         {
             if (id == 0)
