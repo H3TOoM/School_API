@@ -169,11 +169,5 @@ app.MapControllers();
 // Health Check endpoint
 app.MapHealthChecks("/health");
 
-// Seed Data
-using (var scope = app.Services.CreateScope())
-{
-    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    await school_api.Data.SeedData.SeedAsync(context);
-}
 
 app.Run();
