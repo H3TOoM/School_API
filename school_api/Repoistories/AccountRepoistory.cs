@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using school_api.Data;
 using school_api.Data.Models;
 using school_api.Repoistories.Base;
@@ -13,13 +13,9 @@ namespace school_api.Repoistories
             _context = context;
         }
 
-        public async Task<User> GetUserByEmailAsync( string email )
+        public Task<User?> GetUserByEmailAsync( string email )
         {
-            var user = await _context.Users.FirstOrDefaultAsync( x => x.Email == email );
-            if (user == null)
-                throw new KeyNotFoundException( "User Not Found!" );
-
-            return user;
+            return _context.Users.FirstOrDefaultAsync( x => x.Email == email );
         }
 
         public async Task<bool> IsEmailUniqueAsync( string email )

@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace school_api.Data.Models
 {
@@ -9,18 +9,18 @@ namespace school_api.Data.Models
 
         [Required]
         [StringLength(50)]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [Required]
         [StringLength(500)]
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         [Required]
         public double Price { get; set; }
 
         [Required]
         public int SubjectId { get; set; }      
-        public Subject Subject { get; set; }
+        public Subject Subject { get; set; } = null!;
 
 
         public int? TeacherId { get; set; }

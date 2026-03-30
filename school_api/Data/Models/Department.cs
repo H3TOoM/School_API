@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace school_api.Data.Models
 {
@@ -9,14 +9,14 @@ namespace school_api.Data.Models
 
         [Required]
         [StringLength(100)]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         public ICollection<Staff>? StaffMembers { get; set; }
 
 
         [Required]
         public int ManagerId { get; set; }
-        public Manager Manager { get; set; }
+        public Manager Manager { get; set; } = null!;
 
         public ICollection<Teacher>? Teachers { get; set; }
 

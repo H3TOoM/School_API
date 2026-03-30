@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace school_api.Data.Models
 {
@@ -9,20 +9,20 @@ namespace school_api.Data.Models
 
         [Required]
         [StringLength( 100 )]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [Required]
         [StringLength( 255 )]
-        public string PasswordHash { get; set; }
+        public string PasswordHash { get; set; } = string.Empty;
 
         [Required]
         [StringLength( 100 )]
         [EmailAddress]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
 
         [Required]
         [StringLength( 50 )]
-        public string Role { get; set; } // Admin, Teacher, Student, Parent, Staff
+        public string Role { get; set; } = string.Empty; // Admin, Teacher, Student, Parent, Staff
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 

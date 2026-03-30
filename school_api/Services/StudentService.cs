@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using school_api.Data.Models;
 using school_api.DTOs;
 using school_api.Repoistories.Base;
@@ -46,7 +46,7 @@ namespace school_api.Services
                 Email = dto.Email,
                 PhoneNumber = dto.PhoneNumber,
                 UserId = dto.UserId,
-                ParentId = (int)dto.ParentId,
+                ParentId = dto.ParentId,
                 StudentClassId = dto.StudentClassId,
             };
 

@@ -1,4 +1,4 @@
-﻿
+
 using System.ComponentModel.DataAnnotations;
 
 namespace school_api.Data.Models
@@ -13,11 +13,11 @@ namespace school_api.Data.Models
 
         [Required]
         public int StudentId { get; set; }
-        public Student Student { get; set; }
+        public Student Student { get; set; } = null!;
 
         [Required]
         public int ScheduleId { get; set; }
-        public Schedule Schedule { get; set; }
+        public Schedule Schedule { get; set; } = null!;
 
         public DateTime Date { get; set; } 
     }

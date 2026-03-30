@@ -1,4 +1,4 @@
-﻿using school_api.DTOs;
+using school_api.DTOs;
 
 namespace school_api.Services.Base
 {
@@ -8,9 +8,5 @@ namespace school_api.Services.Base
         Task<UserReadDto> LoginAsync(LoginUserDto dto);
 
         Task<bool> DeleteUserAsync( int id );
-
-        // To Do  ==>  Change Password
-         
-
     }
 }

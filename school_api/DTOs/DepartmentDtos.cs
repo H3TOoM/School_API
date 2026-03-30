@@ -6,8 +6,8 @@ namespace school_api.DTOs
     public class DepartmentReadDto
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public IdNameDto Manager { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public IdNameDto Manager { get; set; } = new IdNameDto();
     }
 
     public class DepartmentCreateDto

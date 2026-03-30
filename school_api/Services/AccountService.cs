@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using school_api.Data.Models;
 using school_api.DTOs;
 using school_api.Repoistories.Base;
@@ -24,7 +24,7 @@ namespace school_api.Services
         {
             var isUnique = await _accountRepoistory.IsEmailUniqueAsync( dto.Email );
             if (!isUnique)
-                throw new InvalidDataException("Email Is invalid");
+                throw new InvalidOperationException("Email already exists.");
 
             var user = new User
             {
@@ -46,9 +46,7 @@ namespace school_api.Services
             var user = await _accountRepoistory.GetUserByEmailAsync( dto.Email );
 
             if (user == null || !BCrypt.Net.BCrypt.Verify( dto.Password, user.PasswordHash ))
-            {
-                throw new Exception( "Invalid email or password." );
-            }
+                throw new UnauthorizedAccessException( "Invalid email or password." );
 
             return _mapper.Map<UserReadDto>( user );
         }
@@ -65,8 +63,5 @@ namespace school_api.Services
             return true;
         }
 
-       
-
-        
     }
 }

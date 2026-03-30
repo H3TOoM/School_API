@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace school_api.Data.Models
 {
@@ -13,10 +13,10 @@ namespace school_api.Data.Models
 
         [Required]
         public int StudentId { get; set; }
-        public Student Student { get; set; }
+        public Student Student { get; set; } = null!;
 
         [Required]
         public int CourserId { get; set; }
-        public Course Course { get; set; }
+        public Course Course { get; set; } = null!;
     }
 }

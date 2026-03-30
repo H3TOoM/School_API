@@ -29,8 +29,8 @@ namespace school_api.Services
             // Apply filters
             if (!string.IsNullOrEmpty(filter.SearchTerm))
             {
-                query = query.Where(s => s.Name.Contains(filter.SearchTerm) ||
-                                       s.Email.Contains(filter.SearchTerm));
+                var term = filter.SearchTerm;
+                query = query.Where(s => s.Name.Contains(term) || (s.Email != null && s.Email.Contains(term)));
             }
 
             if (filter.DepartmentId.HasValue)
@@ -109,8 +109,8 @@ namespace school_api.Services
             // Apply filters
             if (!string.IsNullOrEmpty(filter.SearchTerm))
             {
-                query = query.Where(t => t.Name.Contains(filter.SearchTerm) ||
-                                       t.Email.Contains(filter.SearchTerm));
+                var term = filter.SearchTerm;
+                query = query.Where(t => t.Name.Contains(term) || (t.Email != null && t.Email.Contains(term)));
             }
 
             if (filter.DepartmentId.HasValue)

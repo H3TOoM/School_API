@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace school_api.Data.Models
 {
@@ -9,20 +9,20 @@ namespace school_api.Data.Models
 
         [Required]
         [StringLength( 100 )]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         public string? PhoneNumber { get; set; }
 
         [Required, StringLength( 100 )]
-        public string Address { get; set; }
+        public string Address { get; set; } = string.Empty;
 
 
         [Required]
         public int UserId { get; set; }   // 🔑 Foreign Key
 
-        public User User { get; set; }
+        public User User { get; set; } = null!;
 
-        public ICollection<Student> Students { get; set; }
+        public ICollection<Student> Students { get; set; } = new List<Student>();
 
     }
 }

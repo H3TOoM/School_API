@@ -8,9 +8,9 @@ namespace school_api.DTOs
         public DayOfWeek Day { get; set; }
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }
-        public IdNameDto Course { get; set; }
-        public IdNameDto Teacher { get; set; }
-        public IdNameDto StudentClass { get; set; }
+        public IdNameDto Course { get; set; } = new IdNameDto();
+        public IdNameDto Teacher { get; set; } = new IdNameDto();
+        public IdNameDto StudentClass { get; set; } = new IdNameDto();
     }
 
     public class ScheduleCreateDto

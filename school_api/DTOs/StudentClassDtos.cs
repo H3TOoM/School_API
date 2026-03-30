@@ -3,14 +3,14 @@ namespace school_api.DTOs
     public class StudentClassReadDto
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public IdNameDto Department { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public IdNameDto Department { get; set; } = new IdNameDto();
         public IdNameOptionalDto? Teacher { get; set; }
     }
 
     public class StudentClassCreateDto
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         public int DepartmentId { get; set; }
         public int? TeacherId { get; set; }
     }

@@ -6,12 +6,12 @@ namespace school_api.DTOs
     public class TeacherReadDto
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         public string? Email { get; set; }
         public string? PhoneNumber { get; set; }
         public int UserId { get; set; }
-        public IdNameDto Department { get; set; }
-        public IdNameDto Subject { get; set; }
+        public IdNameDto Department { get; set; } = new IdNameDto();
+        public IdNameDto Subject { get; set; } = new IdNameDto();
     }
 
     public class TeacherCreateDto

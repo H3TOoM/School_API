@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using school_api.DTOs;
@@ -28,9 +28,10 @@ namespace school_api.Controllers
 
 
             var user = await _accountService.RegisterAsync( dto );
-            var token = await _tokenService.GenerateTokenAsync( user );
+            var tokenPair = await _tokenService.GenerateTokenPairAsync(user);
 
-            return Ok( new { Token = token, User = user } );
+            // Keep "Token" for backward compatibility
+            return Ok(new { Token = tokenPair.AccessToken, tokenPair.RefreshToken, tokenPair.ExpiresAt, User = user });
         }
 
         [HttpPost( "Login" )]
@@ -41,11 +42,9 @@ namespace school_api.Controllers
                 return BadRequest(ModelState);
                 
             var user = await _accountService.LoginAsync( loginUser );
-            if (user == null)
-                return NotFound( "User No Found!" );
-
-            var token = await _tokenService.GenerateTokenAsync( user );
-            return Ok( new { Token = token, User = user } );
+            var tokenPair = await _tokenService.GenerateTokenPairAsync(user);
+            // Keep "Token" for backward compatibility
+            return Ok(new { Token = tokenPair.AccessToken, tokenPair.RefreshToken, tokenPair.ExpiresAt, User = user });
 
         }
 

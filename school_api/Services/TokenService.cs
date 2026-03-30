@@ -1,4 +1,4 @@
-﻿using Microsoft.IdentityModel.Tokens;
+using Microsoft.IdentityModel.Tokens;
 using school_api.Data.Models;
 using school_api.DTOs;
 using school_api.Repoistories.Base;
@@ -30,6 +30,9 @@ namespace school_api.Services
 
         public Task<string> GenerateTokenAsync( UserReadDto user )
         {
+            var jwtSettings = _configuration.GetSection("Jwt");
+            var keyString = jwtSettings["Key"] ?? throw new InvalidOperationException("JWT Key not found");
+
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
@@ -38,11 +41,11 @@ namespace school_api.Services
                 new Claim(ClaimTypes.Role, user.Role)
             };
 
-            var key = new SymmetricSecurityKey( System.Text.Encoding.UTF8.GetBytes( _configuration["JWT:Key"] ) );
+            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(keyString));
             var creds = new SigningCredentials( key, SecurityAlgorithms.HmacSha256 );
             var token = new JwtSecurityToken(
-                issuer: _configuration["JWT:Issuer"],
-                audience: _configuration["JWT:Audience"],
+                issuer: jwtSettings["Issuer"],
+                audience: jwtSettings["Audience"],
                 claims: claims,
                 expires: DateTime.UtcNow.AddMinutes( 30 ),
                 signingCredentials: creds

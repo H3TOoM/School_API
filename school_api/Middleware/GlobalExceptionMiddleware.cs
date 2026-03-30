@@ -1,6 +1,6 @@
 using System.Net;
 using System.Text.Json;
-using Azure;
+using Microsoft.AspNetCore.Mvc;
 
 namespace school_api.Middleware
 {
@@ -31,47 +31,74 @@ namespace school_api.Middleware
         private static async Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             context.Response.ContentType = "application/json";
-            
-            var response = new
-            {
-                error = new
-                {
-                    message = exception.Message,
-                    details = exception.InnerException?.Message,
-                    timestamp = DateTime.UtcNow
-                }
-            };
+            var traceId = context.TraceIdentifier;
+
+            var includeDetails = context.RequestServices
+                .GetRequiredService<IHostEnvironment>()
+                .IsDevelopment();
+
+            ProblemDetails problem;
 
             switch (exception)
             {
                 case ArgumentNullException:
                 case ArgumentException:
                     context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    problem = new ProblemDetails
+                    {
+                        Status = context.Response.StatusCode,
+                        Title = "Bad request",
+                        Detail = includeDetails ? exception.Message : null,
+                        Instance = context.Request.Path
+                    };
                     break;
                 case UnauthorizedAccessException:
                     context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+                    problem = new ProblemDetails
+                    {
+                        Status = context.Response.StatusCode,
+                        Title = "Unauthorized",
+                        Detail = includeDetails ? exception.Message : null,
+                        Instance = context.Request.Path
+                    };
                     break;
                 case KeyNotFoundException:
                     context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                    problem = new ProblemDetails
+                    {
+                        Status = context.Response.StatusCode,
+                        Title = "Not found",
+                        Detail = includeDetails ? exception.Message : null,
+                        Instance = context.Request.Path
+                    };
                     break;
                 case InvalidOperationException:
                     context.Response.StatusCode = (int)HttpStatusCode.Conflict;
+                    problem = new ProblemDetails
+                    {
+                        Status = context.Response.StatusCode,
+                        Title = "Conflict",
+                        Detail = includeDetails ? exception.Message : null,
+                        Instance = context.Request.Path
+                    };
                     break;
                 default:
                     context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                    response = new
+                    problem = new ProblemDetails
                     {
-                        error = new
-                        {
-                            message = "An error occurred while processing your request.",
-                            details = (string?)null,
-                            timestamp = DateTime.UtcNow
-                        }
+                        Status = context.Response.StatusCode,
+                        Title = "Internal server error",
+                        Detail = includeDetails ? exception.Message : "An error occurred while processing your request.",
+                        Instance = context.Request.Path
                     };
                     break;
             }
 
-            var jsonResponse = JsonSerializer.Serialize(response, new JsonSerializerOptions
+            problem.Extensions["traceId"] = traceId;
+            if (includeDetails && exception.InnerException?.Message is { Length: > 0 } inner)
+                problem.Extensions["inner"] = inner;
+
+            var jsonResponse = JsonSerializer.Serialize(problem, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
