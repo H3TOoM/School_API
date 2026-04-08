@@ -3,6 +3,7 @@ using school_api.Data.Models;
 using school_api.DTOs;
 using school_api.Repoistories.Base;
 using school_api.Services.Base;
+using school_api.Validation;
 
 namespace school_api.Services
 {
@@ -15,11 +16,23 @@ namespace school_api.Services
 
         // Inject AutoMapper
         private readonly IMapper _mapper;
-        public StudentService( IMainRepoistory<Student> mainRepoistory, IUnitOfWork unitOfWork, IMapper mapper )
+
+        // Inject Validators
+        private readonly IValidator<StudentCreateDto> _createValidator;
+        private readonly IValidator<StudentUpdateDto> _updateValidator;
+
+        public StudentService(
+            IMainRepoistory<Student> mainRepoistory,
+            IUnitOfWork unitOfWork,
+            IMapper mapper,
+            IValidator<StudentCreateDto> createValidator,
+            IValidator<StudentUpdateDto> updateValidator)
         {
             _mainRepoistory = mainRepoistory;
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _createValidator = createValidator;
+            _updateValidator = updateValidator;
         }
 
 
@@ -39,6 +52,11 @@ namespace school_api.Services
 
         public async Task<StudentReadDto> CreateStudentAsync( StudentCreateDto dto )
         {
+            // Validate input using dedicated validator (SRP compliance)
+            var validationResult = await _createValidator.ValidateAsync(dto);
+            if (!validationResult.IsValid)
+                throw new ArgumentException(string.Join(", ", validationResult.Errors));
+
             var student = new Student
             {
                 Name = dto.Name,
@@ -59,10 +77,12 @@ namespace school_api.Services
 
         public async Task<StudentReadDto> UpdateStudentAsync( int id, StudentUpdateDto dto )
         {
-            var student = await _mainRepoistory.GetByIdAsync( id );
+            // Validate input using dedicated validator (SRP compliance)
+            var validationResult = await _updateValidator.ValidateAsync(dto);
+            if (!validationResult.IsValid)
+                throw new ArgumentException(string.Join(", ", validationResult.Errors));
 
-            if (student == null)
-                throw new KeyNotFoundException( "Student not found." );
+            var student = await _mainRepoistory.GetByIdAsync( id );
 
             student.Name = dto.Name ?? student.Name;
             student.Email = dto.Email ?? student.Email;
@@ -70,7 +90,6 @@ namespace school_api.Services
             student.DateOfBirth = dto.DateOfBirth ?? student.DateOfBirth;
             student.ParentId = dto.ParentId ?? student.ParentId;
             student.StudentClassId = dto.StudentClassId ?? student.StudentClassId;
-
 
             await _mainRepoistory.UpdateAsync( id, student );
             await _unitOfWork.SaveChangesAsync();

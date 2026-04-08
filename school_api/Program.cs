@@ -5,10 +5,9 @@ using school_api.Data;
 using school_api.Repoistories;
 using school_api.Repoistories.Base;
 using school_api.Services.Base;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using school_api.Middleware;
+using school_api.Middleware.ExceptionHandlers;
+using school_api.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,6 +46,22 @@ builder.Services.AddScoped<IProfileService, ProfileService>();
 builder.Services.AddScoped<ISearchService, SearchService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IAuditService, AuditService>();
+
+// Register exception handlers (Strategy pattern for OCP compliance)
+builder.Services.AddSingleton<IExceptionHandler, BadRequestExceptionHandler>();
+builder.Services.AddSingleton<IExceptionHandler, UnauthorizedExceptionHandler>();
+builder.Services.AddSingleton<IExceptionHandler, NotFoundExceptionHandler>();
+builder.Services.AddSingleton<IExceptionHandler, ConflictExceptionHandler>();
+builder.Services.AddSingleton<IExceptionHandler, DefaultExceptionHandler>();
+
+// Register sort strategies for search service (Strategy pattern for OCP compliance)
+builder.Services.AddSingleton<ISortStrategy<Data.Models.Student>, Sorting.StudentSortStrategies.ByName>();
+builder.Services.AddSingleton<ISortStrategy<Data.Models.Student>, Sorting.StudentSortStrategies.ByDateOfBirth>();
+builder.Services.AddSingleton<ISortStrategy<Data.Models.Student>, Sorting.StudentSortStrategies.Default>();
+
+// Register validators (SRP compliance - validation logic separated from controllers)
+builder.Services.AddScoped<IValidator<DTOs.StudentCreateDto>, Validation.StudentCreateDtoValidator>();
+builder.Services.AddScoped<IValidator<DTOs.StudentUpdateDto>, Validation.StudentUpdateDtoValidator>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -91,56 +106,14 @@ builder.Services.AddSwaggerGen(c =>
 // AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
-// JWT Authentication
-var jwtSettings = builder.Configuration.GetSection("Jwt");
-var key = Encoding.UTF8.GetBytes(jwtSettings["Key"] ?? throw new InvalidOperationException("JWT Key not found"));
-
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddJwtBearer(options =>
-{
-    options.RequireHttpsMetadata = false;
-    options.SaveToken = true;
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(key),
-        ValidateIssuer = true,
-        ValidIssuer = jwtSettings["Issuer"],
-        ValidateAudience = true,
-        ValidAudience = jwtSettings["Audience"],
-        ValidateLifetime = true,
-        ClockSkew = TimeSpan.Zero
-    };
-});
-
-// Authorization
-builder.Services.AddAuthorization();
+// JWT Authentication and Authorization using Options pattern
+builder.Services.AddJwtAuthentication(builder.Configuration);
 
 // Health Checks
 builder.Services.AddHealthChecks();
 
-// CORS
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", policy =>
-    {
-        policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader();
-    });
-    
-    options.AddPolicy("AllowSpecificOrigins", policy =>
-    {
-        policy.WithOrigins("http://localhost:3000", "http://localhost:4200", "http://localhost:5173")
-              .AllowAnyMethod()
-              .AllowAnyHeader()
-              .AllowCredentials();
-    });
-});
+// CORS using Options pattern
+builder.Services.AddCorsConfiguration(builder.Configuration);
 
 var app = builder.Build();
 

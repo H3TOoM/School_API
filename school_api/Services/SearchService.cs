@@ -5,6 +5,8 @@ using school_api.Data.Models;
 using school_api.DTOs;
 using school_api.Repoistories.Base;
 using school_api.Services.Base;
+using school_api.Services.Specifications;
+using school_api.Services.Sorting;
 
 namespace school_api.Services
 {
@@ -12,11 +14,16 @@ namespace school_api.Services
     {
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IEnumerable<ISortStrategy<Student>> _studentSortStrategies;
 
-        public SearchService(AppDbContext context, IMapper mapper)
+        public SearchService(
+            AppDbContext context, 
+            IMapper mapper,
+            IEnumerable<ISortStrategy<Student>> studentSortStrategies)
         {
             _context = context;
             _mapper = mapper;
+            _studentSortStrategies = studentSortStrategies;
         }
 
         public async Task<PagedResultDto<StudentReadDto>> SearchStudentsAsync(StudentSearchFilterDto filter)
@@ -26,64 +33,59 @@ namespace school_api.Services
                 .Include(s => s.Parent)
                 .AsQueryable();
 
-            // Apply filters
+            // Build specification using Specification pattern
+            ISpecification<Student>? specification = null;
+
             if (!string.IsNullOrEmpty(filter.SearchTerm))
             {
-                var term = filter.SearchTerm;
-                query = query.Where(s => s.Name.Contains(term) || (s.Email != null && s.Email.Contains(term)));
+                var searchSpec = new StudentSpecifications.BySearchTerm(filter.SearchTerm);
+                specification = specification == null ? searchSpec : specification.And(searchSpec);
             }
 
             if (filter.DepartmentId.HasValue)
             {
-                query = query.Where(s => s.StudentClass.DepartmentId == filter.DepartmentId.Value);
+                var deptSpec = new StudentSpecifications.ByDepartment(filter.DepartmentId.Value);
+                specification = specification == null ? deptSpec : specification.And(deptSpec);
             }
 
             if (filter.StudentClassId.HasValue)
             {
-                query = query.Where(s => s.StudentClassId == filter.StudentClassId.Value);
+                var classSpec = new StudentSpecifications.ByStudentClass(filter.StudentClassId.Value);
+                specification = specification == null ? classSpec : specification.And(classSpec);
             }
 
             if (filter.ParentId.HasValue)
             {
-                query = query.Where(s => s.ParentId == filter.ParentId.Value);
+                var parentSpec = new StudentSpecifications.ByParent(filter.ParentId.Value);
+                specification = specification == null ? parentSpec : specification.And(parentSpec);
             }
 
-            if (filter.DateOfBirthFrom.HasValue)
+            if (filter.DateOfBirthFrom.HasValue || filter.DateOfBirthTo.HasValue)
             {
-                query = query.Where(s => s.DateOfBirth >= filter.DateOfBirthFrom.Value);
+                var dobSpec = new StudentSpecifications.ByDateOfBirthRange(filter.DateOfBirthFrom, filter.DateOfBirthTo);
+                specification = specification == null ? dobSpec : specification.And(dobSpec);
             }
 
-            if (filter.DateOfBirthTo.HasValue)
+            // Apply specification
+            if (specification != null)
             {
-                query = query.Where(s => s.DateOfBirth <= filter.DateOfBirthTo.Value);
-            }
-
-            // Apply sorting
-            if (!string.IsNullOrEmpty(filter.SortBy))
-            {
-                switch (filter.SortBy.ToLower())
+                var expression = specification.ToExpression();
+                if (expression != null)
                 {
-                    case "name":
-                        query = filter.SortDescending ? query.OrderByDescending(s => s.Name) : query.OrderBy(s => s.Name);
-                        break;
-                    case "dateofbirth":
-                        query = filter.SortDescending ? query.OrderByDescending(s => s.DateOfBirth) : query.OrderBy(s => s.DateOfBirth);
-                        break;
-                    default:
-                        query = query.OrderBy(s => s.Name);
-                        break;
+                    query = query.Where(expression);
                 }
             }
-            else
-            {
-                query = query.OrderBy(s => s.Name);
-            }
+
+            // Apply sorting using Strategy pattern
+            var sortStrategy = _studentSortStrategies.FirstOrDefault(s => s.CanApply(filter.SortBy ?? string.Empty))
+                ?? new StudentSortStrategies.Default();
+            var orderedQuery = sortStrategy.Apply(query, filter.SortDescending);
 
             // Get total count
             var totalCount = await query.CountAsync();
 
             // Apply pagination
-            var students = await query
+            var students = await orderedQuery
                 .Skip((filter.Page - 1) * filter.PageSize)
                 .Take(filter.PageSize)
                 .ToListAsync();

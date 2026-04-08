@@ -1,6 +1,7 @@
 using System.Net;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
+using school_api.Middleware.ExceptionHandlers;
 
 namespace school_api.Middleware
 {
@@ -8,11 +9,16 @@ namespace school_api.Middleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger<GlobalExceptionMiddleware> _logger;
+        private readonly IEnumerable<IExceptionHandler> _exceptionHandlers;
 
-        public GlobalExceptionMiddleware(RequestDelegate next, ILogger<GlobalExceptionMiddleware> logger)
+        public GlobalExceptionMiddleware(
+            RequestDelegate next, 
+            ILogger<GlobalExceptionMiddleware> logger,
+            IEnumerable<IExceptionHandler> exceptionHandlers)
         {
             _next = next;
             _logger = logger;
+            _exceptionHandlers = exceptionHandlers;
         }
 
         public async Task InvokeAsync(HttpContext context)
@@ -28,73 +34,27 @@ namespace school_api.Middleware
             }
         }
 
-        private static async Task HandleExceptionAsync(HttpContext context, Exception exception)
+        private async Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             context.Response.ContentType = "application/json";
             var traceId = context.TraceIdentifier;
-
             var includeDetails = context.RequestServices
                 .GetRequiredService<IHostEnvironment>()
                 .IsDevelopment();
 
-            ProblemDetails problem;
+            var handler = _exceptionHandlers.FirstOrDefault(h => h.CanHandle(exception));
+            var problem = handler?.Handle(exception, traceId, includeDetails) 
+                ?? new ProblemDetails
+                {
+                    Status = (int)HttpStatusCode.InternalServerError,
+                    Title = "Internal server error",
+                    Detail = includeDetails ? exception.Message : "An error occurred while processing your request.",
+                    Extensions = { ["traceId"] = traceId }
+                };
 
-            switch (exception)
-            {
-                case ArgumentNullException:
-                case ArgumentException:
-                    context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                    problem = new ProblemDetails
-                    {
-                        Status = context.Response.StatusCode,
-                        Title = "Bad request",
-                        Detail = includeDetails ? exception.Message : null,
-                        Instance = context.Request.Path
-                    };
-                    break;
-                case UnauthorizedAccessException:
-                    context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
-                    problem = new ProblemDetails
-                    {
-                        Status = context.Response.StatusCode,
-                        Title = "Unauthorized",
-                        Detail = includeDetails ? exception.Message : null,
-                        Instance = context.Request.Path
-                    };
-                    break;
-                case KeyNotFoundException:
-                    context.Response.StatusCode = (int)HttpStatusCode.NotFound;
-                    problem = new ProblemDetails
-                    {
-                        Status = context.Response.StatusCode,
-                        Title = "Not found",
-                        Detail = includeDetails ? exception.Message : null,
-                        Instance = context.Request.Path
-                    };
-                    break;
-                case InvalidOperationException:
-                    context.Response.StatusCode = (int)HttpStatusCode.Conflict;
-                    problem = new ProblemDetails
-                    {
-                        Status = context.Response.StatusCode,
-                        Title = "Conflict",
-                        Detail = includeDetails ? exception.Message : null,
-                        Instance = context.Request.Path
-                    };
-                    break;
-                default:
-                    context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                    problem = new ProblemDetails
-                    {
-                        Status = context.Response.StatusCode,
-                        Title = "Internal server error",
-                        Detail = includeDetails ? exception.Message : "An error occurred while processing your request.",
-                        Instance = context.Request.Path
-                    };
-                    break;
-            }
+            context.Response.StatusCode = problem.Status ?? (int)HttpStatusCode.InternalServerError;
+            problem.Instance = context.Request.Path;
 
-            problem.Extensions["traceId"] = traceId;
             if (includeDetails && exception.InnerException?.Message is { Length: > 0 } inner)
                 problem.Extensions["inner"] = inner;
 

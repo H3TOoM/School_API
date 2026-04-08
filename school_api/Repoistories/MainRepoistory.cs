@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using school_api.Data;
 using school_api.Repoistories.Base;
-using System.Xml.Linq;
 
 namespace school_api.Repoistories
 {
@@ -19,12 +18,14 @@ namespace school_api.Repoistories
         // Get All
         public async Task<IEnumerable<T>> GetAllAsync() => await _dbSet.ToListAsync();
 
-
         // Get By Id
-        public async Task<T> GetByIdAsync( int id ) => await _dbSet.FindAsync( id ) ?? throw new InvalidOperationException("Id not found!");
-        
-
-
+        public async Task<T> GetByIdAsync( int id )
+        {
+            var entity = await _dbSet.FindAsync( id );
+            if (entity == null)
+                throw new KeyNotFoundException( $"Entity with id {id} not found." );
+            return entity;
+        }
 
         // Create new entity
         public async Task<T> CreateAsync( T entity )
@@ -57,8 +58,7 @@ namespace school_api.Repoistories
         public async Task<bool> DeleteAsync( int id )
         {
             var entity = await GetByIdAsync( id );
-             _dbSet.Remove( entity );
-
+            _dbSet.Remove( entity );
             return true;
         }
 
